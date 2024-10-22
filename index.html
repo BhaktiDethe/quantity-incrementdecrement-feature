@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .card{
+        width: 300px;
+      border: 1px double rgb(225, 92, 44);
+       background-color: #ffeee6;
+       border-radius: 10px;
+       
+    }
+    .product-img{
+        height: 250px;
+        display: block;
+        margin: 20px auto;
+
+    }
+    .product-title{
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+    }
+    .product-price{
+        max-resolution: 0px;
+        padding: 0px;
+        text-align: center;
+    }
+    .btn-buy-now{
+        background-color: #ff621a;
+        color: white;
+        border: none;
+        padding: 5px 20px;
+        display: block;
+        margin: 10px auto;
+    border-radius: 10px;
+    cursor: pointer;
+    }
+    .quantity-icon{
+        height: 35px;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    .quantity-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 10px o;
+    }
+</style>
+<body>
+    <div class="card" id="card">
+        <img src="img.png" class="product-img">
+        <h2 class="product-title">Bridal Lehaga</h2>
+
+        <p class="product-price">
+            <b>price:10,000</b>
+        </p>
+        <div class="quantity-container">
+        <img src="./minus.png" class="quantity-icon" onclick="dec()"/>
+
+            <samp id="quantity">1</samp>
+       <img src="./add.png" class="quantity-icon" onclick="inc()"/>
+       </div>
+        <button onclick="" class="btn-buy-now">Buy Now</button>
+    </div>
+    <script>
+       const quantElement = document.getElementById(`quantity`)
+       
+
+        function inc(){
+                  let quantity = parseInt(quantElement.innerText);
+                   quantElement.innerText = ++quantity;
+        }
+
+        function dec(){
+            let quantity = parseInt(quantElement.innerText);
+            if(quantity>1){
+
+            quantElement.innerText = --quantity;
+        }
+    }
+    </script>
+</body>
+</html>
